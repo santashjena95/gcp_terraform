@@ -6,9 +6,9 @@ module "gce_instance" {
   internal_ip_address = ""
   vm_region           = ""
   instance_name       = ""
-  vm_machine_type     = ""
-  vm_zone             = ""
-  vm_image            = ""
+  #vm_machine_type     = ""
+  #vm_zone             = ""
+  #vm_image            = ""
   service_account     = "terraform@pelagic-magpie-308310.iam.gserviceaccount.com"
   startup_script = <<SCRIPT
       #! /bin/bash
