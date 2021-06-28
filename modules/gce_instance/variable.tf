@@ -13,9 +13,6 @@ variable "internal_ip_address" {
 variable "vm_region" {
   type        = string
 }
-variable "network_name" {
-  type        = string
-}
 variable "instance_name" {
   description = "The name of VM Instance"
   type        = string
