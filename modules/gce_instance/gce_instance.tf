@@ -4,7 +4,7 @@ resource "google_compute_address" "internal_ip" {
   subnetwork   = var.subnetwork_name
   address_type = "INTERNAL"
   address      = var.internal_ip_address
-  region       = "us-east4"
+  region       = var.region
 }
 resource "google_compute_instance" "instance_creation" {
   name         = var.instance_name
