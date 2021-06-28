@@ -34,5 +34,6 @@ resource "google_compute_instance" "instance_creation" {
   }
   metadata = {
     startup-script = var.startup_script
+    shutdown-script = var.shutdown_script
   }
 }
