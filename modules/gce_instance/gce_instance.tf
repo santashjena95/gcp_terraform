@@ -25,7 +25,7 @@ resource "google_compute_instance" "instance_creation" {
   }
   network_interface {
     network = var.network_name
-    subnetwork = google_compute_address.internal_ip.subnetwork
+    subnetwork = var.subnetwork_name
     network_ip = google_compute_address.internal_ip.address
     access_config {
       // Ephemeral IP
