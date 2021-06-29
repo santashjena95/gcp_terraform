@@ -1,3 +1,13 @@
+module "service_account_1" {
+  source              = "./modules/gce_service_account"
+  account_id          = "service_account_for_vm"
+  display_name        = "service_account_for_vm"
+}
+module "gce_network_1" {
+  source      = "./modules/gce_network"
+  vpc_network = "test-vpc-1"
+  vpc_subnet  = "us-east4-new"
+}
 module "gce_instance_1" {
   source              = "./modules/gce_instance_linux"
   internal_ip_name    = "my-internal-test"
@@ -9,7 +19,7 @@ module "gce_instance_1" {
   #vm_machine_type     = ""
   vm_zone             = var.vm_zone_name
   #vm_image            = ""
-  service_account     = "terraform@industrial-pad-316908.iam.gserviceaccount.com"
+  service_account     = "${module.service_account_1.email}"
   startup_script = <<SCRIPT
       #! /bin/bash
       sudo hostnamectl set-hostname ${var.vm_instance_name}
@@ -27,9 +37,4 @@ module "gce_instance_1" {
       #! /bin/bash
       /home/jenasantash95/google-cloud-sdk/bin/gcloud compute instances remove-metadata ${var.vm_instance_name} --zone=${var.vm_zone_name} --keys=startup-script,shutdown-script
       SCRIPT 
-}
-module "gce_network_1" {
-  source      = "./modules/gce_network"
-  vpc_network = "test-vpc-1"
-  vpc_subnet  = "us-east4-new"
 }
