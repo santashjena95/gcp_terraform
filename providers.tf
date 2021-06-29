@@ -1,3 +1,3 @@
 provider "google" {
-  project     = "pelagic-magpie-308310"
+  project     = "industrial-pad-316908"
 }
