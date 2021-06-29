@@ -28,3 +28,8 @@ module "gce_instance_1" {
       /home/jenasantash95/google-cloud-sdk/bin/gcloud compute instances remove-metadata ${var.vm_instance_name} --zone=${var.vm_zone_name} --keys=startup-script,shutdown-script
       SCRIPT 
 }
+module "gce_network_1" {
+  source      = "./modules/gce_network"
+  vpc_network = "test-vpc-1"
+  vpc_subnet  = "us-east4-new"
+}
