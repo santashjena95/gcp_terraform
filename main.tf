@@ -2,6 +2,7 @@ module "service_account_1" {
   source              = "./modules/gce_service_account"
   account_id          = "service-account-for-vm"
   display_name        = "service-account-for-vm"
+  custom_role_id      = "service_account_for_vm"
 }
 module "gce_network_1" {
   source      = "./modules/gce_network"
