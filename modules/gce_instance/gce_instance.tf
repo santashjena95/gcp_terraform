@@ -1,6 +1,5 @@
 resource "google_compute_address" "internal_ip" {
   name         = var.internal_ip_name
-  network      = var.network_name
   subnetwork   = var.subnetwork_name
   address_type = "INTERNAL"
   address      = var.internal_ip_address
@@ -25,7 +24,7 @@ resource "google_compute_instance" "instance_creation" {
     scopes = ["cloud-platform"]
   }
   network_interface {
-    network = google_compute_address.internal_ip.network
+    network = var.network_name
     subnetwork = google_compute_address.internal_ip.subnetwork
     network_ip = google_compute_address.internal_ip.address
     access_config {
