@@ -3,7 +3,7 @@ resource "google_service_account" "service_account" {
   display_name = var.display_name
 }
 resource "google_project_iam_custom_role" "custom_role_1" {
-  role_id     = "${google_service_account.service_account.display_name}CustomRole"
+  role_id     = var.custom_role_id
   title       = "${google_service_account.service_account.display_name} Custom Role"
   description = "Role for giving metadata level access to service account"
   permissions = ["compute.instances.setMetadata","compute.instances.get"]
