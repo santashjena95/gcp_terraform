@@ -1,5 +1,5 @@
 module "gce_instance_1" {
-  source =            = "./modules/gce_instance"
+  source =            = "modules/gce_instance"
   internal_ip_name    = "my-internal-test"
   network_name        = "test-vpc"
   subnetwork_name     = "new-us-east"
