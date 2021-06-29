@@ -30,7 +30,7 @@ variable "vm_zone" {
 variable "vm_image" {
   description = "Image to be used for Boot disk OS"
   type        = string
-  default = "projects/pelagic-magpie-308310/global/images/sles15sp1sapnew"
+  default = "projects/industrial-pad-316908/global/images/sles15sp1sapnew"
 }
 variable "service_account" {
   type        = string
