@@ -4,3 +4,6 @@ variable "account_id" {
 variable "display_name" {
   type        = string
 }
+variable "custom_role_id" {
+  type        = string
+}
