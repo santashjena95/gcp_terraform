@@ -4,6 +4,3 @@ variable "account_id" {
 variable "display_name" {
   type        = string
 }
-variable "custome_role_id" {
-  type        = string
-}
