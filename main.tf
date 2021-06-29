@@ -19,7 +19,7 @@ module "gce_instance_1" {
   #vm_machine_type     = ""
   vm_zone             = var.vm_zone_name
   #vm_image            = ""
-  service_account     = "${module.service_account_1.google_service_account.service_account.email}"
+  service_account     = "${module.service_account_1.service_account_email}"
   startup_script = <<SCRIPT
       #! /bin/bash
       sudo hostnamectl set-hostname ${var.vm_instance_name}
