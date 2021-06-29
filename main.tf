@@ -1,19 +1,19 @@
-module "gce_instance" {
+module "gce_instance_1" {
   source =            = "./modules/gce_instance"
   internal_ip_name    = "my-internal-test"
   network_name        = "test-vpc"
-  subnetwork_name     = "test-subnet"
+  subnetwork_name     = "new-us-east"
   internal_ip_address = "10.0.0.20"
   #vm_region           = ""
   instance_name       = "sles15sp1sap20"
   #vm_machine_type     = ""
   #vm_zone             = ""
   #vm_image            = ""
-  service_account     = "terraform@pelagic-magpie-308310.iam.gserviceaccount.com"
+  service_account     = "terraform@industrial-pad-316908.iam.gserviceaccount.com"
   startup_script = <<SCRIPT
       #! /bin/bash
       sudo sed -i 's/.*127.0.1.1.*/${google_compute_address.internal_ip.address} ${var.instance_name}.personallab.local ${var.instance_name}/' /etc/hosts
-      sudo hostnamectl set-hostname ${var.instance_name}.personallab.local
+      sudo hostnamectl set-hostname ${var.instance_name}
       echo ${var.domain_password} | kinit -V ${var.domain_user}@PERSONALLAB.LOCAL
       echo ${var.domain_password} | sudo realm join --verbose --user=${var.domain_user} PERSONALLAB.LOCAL
       sudo realm permit -g AccAdminSecOpsServers@PERSONALLAB.LOCAL
