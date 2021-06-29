@@ -18,3 +18,9 @@ variable "vm_zone_name" {
   type        = string
   default     = "us-east4-c"
 }
+variable "domain_user" {
+  type        = string
+}
+variable "domain_password" {
+  type        = string
+}
