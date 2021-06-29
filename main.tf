@@ -1,7 +1,7 @@
 module "service_account_1" {
   source              = "./modules/gce_service_account"
-  account_id          = "service_account_for_vm"
-  display_name        = "service_account_for_vm"
+  account_id          = "service-account-for-vm"
+  display_name        = "service-account-for-vm"
 }
 module "gce_network_1" {
   source      = "./modules/gce_network"
