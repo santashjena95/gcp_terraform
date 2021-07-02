@@ -24,7 +24,7 @@ module "gce_instance_1" {
   startup_script = <<SCRIPT
       #! /bin/bash
       sudo hostnamectl set-hostname ${var.vm_instance_name}
-      sudo sed -i 's/.*127.0.1.1.*/${var.vm_internal_ip} ${var.vm_instance_name}.personallab.local ${var.vm_instance_name}/' /etc/hosts
+      sudo sed -i 's/.*127.0.1.1.*/127.0.1.1 ${var.vm_instance_name}.personallab.local ${var.vm_instance_name}/' /etc/hosts
       echo ${var.domain_password} | kinit -V ${var.domain_user}@PERSONALLAB.LOCAL
       echo ${var.domain_password} | sudo realm join --verbose --user=${var.domain_user} PERSONALLAB.LOCAL
       sudo realm permit -g AccAdminSecOpsServers@PERSONALLAB.LOCAL
