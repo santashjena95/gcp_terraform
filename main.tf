@@ -5,9 +5,11 @@ module "service_account_1" {
   custom_role_id      = "service_account_for_vm"
 }
 module "gce_network_1" {
-  source      = "./modules/gce_network"
-  vpc_network = "test-vpc-1"
-  vpc_subnet  = "us-east4-new"
+  source        = "./modules/gce_network"
+  vpc_network   = "test-vpc-1"
+  vpc_subnet    = "us-east4-new"
+  subnet_region = "us-east4"
+  cidr_range    = "192.168.0.0/24"
 }
 module "gce_instance_1" {
   source              = "./modules/gce_instance_linux"
