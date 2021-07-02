@@ -2,7 +2,7 @@ resource "google_compute_address" "internal_ip" {
   name         = var.internal_ip_name
   subnetwork   = var.subnetwork_name
   address_type = "INTERNAL"
-  address      = var.internal_ip_address
+  #address      = var.internal_ip_address
   region       = var.vm_region
 }
 resource "google_compute_instance" "instance_creation" {
@@ -17,6 +17,7 @@ resource "google_compute_instance" "instance_creation" {
   boot_disk {
     initialize_params {
       image = var.vm_image
+      labels = { appname="test-terraform",environment="nonprod" }
     }
   }
   service_account {
