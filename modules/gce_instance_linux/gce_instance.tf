@@ -27,9 +27,9 @@ resource "google_compute_instance" "instance_creation" {
     network = var.network_name
     subnetwork = var.subnetwork_name
     network_ip = google_compute_address.internal_ip.address
-    access_config {
-      // Ephemeral IP
-    }
+    #access_config {
+    #  // Ephemeral IP
+    #}
   }
   metadata = {
     startup-script = var.startup_script
