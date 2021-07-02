@@ -1,8 +1,8 @@
-variable "vm_internal_ip" {
-  description = "Internal IP Address of VM Instance"
-  type        = string
-  default     = "10.0.0.20"
-}
+#variable "vm_internal_ip" {
+#  description = "Internal IP Address of VM Instance"
+#  type        = string
+#  default     = "10.0.0.20"
+#}
 variable "vm_region_name" {
   description = "Region location of VM Instance"
   type        = string
