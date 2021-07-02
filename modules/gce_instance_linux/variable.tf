@@ -7,9 +7,9 @@ variable "network_name" {
 variable "subnetwork_name" {
   type        = string
 }
-variable "internal_ip_address" {
-  type        = string
-}
+#variable "internal_ip_address" {
+#  type        = string
+#}
 variable "vm_region" {
   type        = string
 }
