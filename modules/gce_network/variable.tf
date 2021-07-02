@@ -4,3 +4,9 @@ variable "vpc_network" {
 variable "vpc_subnet" {
   type        = string
 }
+variable "region" {
+  type        = string
+}
+variable "cidr_range" {
+  type        = string
+}
