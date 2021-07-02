@@ -16,7 +16,7 @@ module "gce_instance_1" {
   internal_ip_name    = "my-internal-test"
   network_name        = "test-vpc"
   subnetwork_name     = "new-us-east"
-  internal_ip_address = var.vm_internal_ip
+  #internal_ip_address = var.vm_internal_ip
   vm_region           = var.vm_region_name
   instance_name       = var.vm_instance_name
   #vm_machine_type     = ""
